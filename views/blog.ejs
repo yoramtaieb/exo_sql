@@ -1,0 +1,11 @@
+<%- include("_header") -%>
+
+<h1><%= posts.title %></h1>
+
+<ul>
+  <% for (let i = 0; i < posts.items.length; i++) { %>
+  <li><%= posts.items[i] %></li>
+  <% } %>
+</ul>
+
+<%- include("_footer") -%>

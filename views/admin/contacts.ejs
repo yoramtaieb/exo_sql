@@ -1,0 +1,33 @@
+<%- include("../layouts/_header") -%>
+<%- include("layouts/_nav") -%>
+
+<h1>Liste des contacts (<%= contacts.length %>)</h1>
+
+<div class="table-responsive-sm">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Titre</th>
+        <th>Email</th>
+        <th>Message</th>
+        <th class="d-print-none">
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for (const contact of contacts) { %>
+      <tr>
+        <td><%= contact.title %></td>
+        <td><%= contact.email %></td>
+        <td><%= contact.message %></td>
+        <td class="d-print-none">
+          <a class="btn btn-sm btn-warning" href="/admin/edit/<%= contact.id %>">Modifier</a>
+          <a class="btn btn-sm btn-danger" href="/admin/delete/<%= contact.id %>">Effacer</a>
+        </td>
+      </tr>
+      <% } %>
+    </tbody>
+  </table>
+</div>
+
+<%- include("../layouts/_footer") -%>
